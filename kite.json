@@ -21,7 +21,7 @@
           "buildVersion": "0.1.0",
           "date": "2026-11-09",
           "localizedDescription": "Wersja do testów.",
-          "downloadURL": "https://github.com/dawidmkrt-rgb/Kite-release/releases/download/kite/Kite.ipa",
+          "downloadURL": "https://dawidmkrt-rgb.github.io/Kite-release/Kite.ipa",
           "size": 10083463,
           "minOSVersion": "16.0"
         }
