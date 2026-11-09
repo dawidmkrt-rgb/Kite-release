@@ -17,16 +17,19 @@
       "category": "productivity",
       "versions": [
         {
-          "version": "0.1.11",
-          "buildVersion": "0.1.11",
+          "version": "0.1.12",
+          "buildVersion": "0.1.12",
           "date": "2026-11-09",
-          "localizedDescription": "Wersja do testów.",
+          "localizedDescription": "Ikona Kite na iPhonie.",
           "downloadURL": "https://dawidmkrt-rgb.github.io/Kite-release/Kite.ipa",
-          "size": 10083249,
+          "size": 10077543,
           "minOSVersion": "16.0"
         }
       ],
-      "appPermissions": { "entitlements": [], "privacy": {} }
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
     }
   ],
   "news": []
