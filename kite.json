@@ -1,0 +1,33 @@
+{
+  "name": "Kite",
+  "identifier": "app.kite.notes.source",
+  "subtitle": "Czat na myśli",
+  "iconURL": "https://dawidmkrt-rgb.github.io/Kite-release/icon.png",
+  "website": "https://dawidmkrt-rgb.github.io/Kite-release/",
+  "tintColor": "#d2462c",
+  "apps": [
+    {
+      "name": "Kite",
+      "bundleIdentifier": "app.kite.notes",
+      "developerName": "Kite",
+      "subtitle": "Czat na myśli",
+      "localizedDescription": "Zapisz myśl, nadaj jej znaczenie i odłóż do szuflady. Synchronizacja przez iCloud z Kite na Macu.",
+      "iconURL": "https://dawidmkrt-rgb.github.io/Kite-release/icon.png",
+      "tintColor": "#d2462c",
+      "category": "productivity",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "buildVersion": "0.1.0",
+          "date": "2026-11-09",
+          "localizedDescription": "Wersja do testów.",
+          "downloadURL": "https://github.com/dawidmkrt-rgb/Kite-release/releases/download/kite/Kite.ipa",
+          "size": 10083463,
+          "minOSVersion": "16.0"
+        }
+      ],
+      "appPermissions": { "entitlements": [], "privacy": {} }
+    }
+  ],
+  "news": []
+}

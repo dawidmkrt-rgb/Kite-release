@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kite – wersje do testów</title>
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #d2462c; --background: #f5f7f9; --surface: #ffffff; --line: #dde2e8;
+    --text: #1b2430; --text-muted: #5b6675;
+    --font: "Source Sans 3", -apple-system, system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --background: #14171c; --surface: #1c2027; --line: #2c323b; --text: #e8ebef; --text-muted: #9aa3ae; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--background); color: var(--text); font: 17px/1.55 var(--font); }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  header img { width: 56px; height: 56px; border-radius: 12px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0; }
+  .lead { color: var(--text-muted); margin: 0 0 32px; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  h2 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  p { margin: 0 0 12px; }
+  ol { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; font-weight: 600;
+         border-radius: 10px; padding: 10px 18px; margin: 4px 8px 8px 0; }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  code { font-family: var(--mono); font-size: 14px; background: var(--background); border: 1px solid var(--line);
+         border-radius: 6px; padding: 2px 6px; word-break: break-all; }
+  .muted { color: var(--text-muted); font-size: 15px; }
+  .ver { font-family: var(--mono); font-size: 13px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <div>
+      <h1>Kite</h1>
+      <span class="ver" id="ver"></span>
+    </div>
+  </header>
+  <p class="lead">Czat na myśli: zapisz, nadaj znaczenie, odłóż do szuflady. Wersje do testów – za darmo.</p>
+
+  <section>
+    <h2>Mac</h2>
+    <a class="btn" href="https://github.com/dawidmkrt-rgb/Kite-release/releases/download/kite/Kite.dmg">Pobierz Kite.dmg</a>
+    <ol>
+      <li>Otwórz <b>Kite.dmg</b> i przeciągnij Kite do folderu <b>Programy</b>.</li>
+      <li>Przy pierwszym uruchomieniu kliknij Kite <b>prawym przyciskiem → Otwórz</b> (macOS ostrzega przed aplikacją spoza App Store).</li>
+      <li>Jeśli nadal się nie otwiera: Ustawienia systemowe → Prywatność i ochrona → <b>Otwórz mimo to</b>.</li>
+    </ol>
+    <p class="muted">macOS 13 lub nowszy.</p>
+  </section>
+
+  <section>
+    <h2>iPhone (SideStore)</h2>
+    <ol>
+      <li>Zainstaluj <a href="https://sidestore.io">SideStore</a> według instrukcji na jego stronie (raz, potrzebny komputer i darmowe Apple ID).</li>
+      <li>W SideStore otwórz <b>Sources → +</b> i wklej adres źródła:<br><code id="src"></code></li>
+      <li>Wejdź w źródło <b>Kite</b> i stuknij <b>Free / Install</b>. Nowe wersje pojawią się tam same.</li>
+    </ol>
+    <a class="btn ghost" href="https://github.com/dawidmkrt-rgb/Kite-release/releases/download/kite/Kite.ipa">albo pobierz Kite.ipa</a>
+    <p class="muted">Darmowe Apple ID: aplikację trzeba odświeżać co 7 dni (SideStore robi to sam) i można mieć najwyżej 3 takie aplikacje. iOS 16 lub nowszy.</p>
+  </section>
+
+  <section>
+    <h2>Pokaz w przeglądarce</h2>
+    <p>Bez instalacji, na przykładowych danych. Nic się nie zapisuje ani nie synchronizuje – to tylko do obejrzenia.</p>
+    <a class="btn ghost" href="demo/">Kite na komputer</a>
+    <a class="btn ghost" href="demo/?ios">Kite na telefon</a>
+  </section>
+</main>
+<script>
+  document.getElementById("src").textContent = new URL("kite.json", location.href).href;
+  fetch("kite.json").then(r => r.json()).then(s => {
+    const v = s.apps[0].versions[0];
+    document.getElementById("ver").textContent = "wersja " + v.version + " · " + v.date;
+  }).catch(() => {});
+</script>
+</body>
+</html>
