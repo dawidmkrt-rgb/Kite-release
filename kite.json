@@ -17,12 +17,12 @@
       "category": "productivity",
       "versions": [
         {
-          "version": "0.1.0",
-          "buildVersion": "0.1.0",
+          "version": "0.1.11",
+          "buildVersion": "0.1.11",
           "date": "2026-11-09",
           "localizedDescription": "Wersja do testów.",
           "downloadURL": "https://dawidmkrt-rgb.github.io/Kite-release/Kite.ipa",
-          "size": 10083463,
+          "size": 10083249,
           "minOSVersion": "16.0"
         }
       ],
